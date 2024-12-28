@@ -6,23 +6,33 @@ namespace Tyuiu.MerzhinskiyOO.Sprint5.Task1.V17.Lib
     {
         public string SaveToFileTextData(int startValue, int stopValue)
         {
-            // Проверяем, существует ли папка "temp_output" в текущем каталоге (где запускается программа)
-            if (!Directory.Exists("temp_output"))
+            string path = Path.Combine(Path.GetTempPath(), "OutPutFileTask1.txt");
+
+            FileInfo fileInfo = new FileInfo(path);
+            bool fileExists = fileInfo.Exists;
+
+            if (fileExists)
             {
-                // Создаем папку "temp_output" в текущем каталоге
-                Directory.CreateDirectory("temp_output");
+                File.Delete(path);
             }
 
-            string path = "temp_output/OutputFileTask1.txt";
+            double y;
+            string strY;
 
-            try
+            for (int x = startValue; x <= stopValue; x++)
             {
-                File.WriteAllText(path, $"start: {startValue}, stop: {stopValue}");
-                Console.WriteLine($"Файл успешно сохранён по пути: {path}");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Ошибка при записи в файл: {ex.Message}");
+                y = Math.Round(2 * x - 4 + ((2 * x - 1) / (Math.Sin(x) + 1)), 2);
+                strY = Convert.ToString(y);
+
+                if (x != stopValue)
+                {
+                    File.AppendAllText(path, strY + Environment.NewLine);
+                }
+                else
+                {
+                    File.AppendAllText(path, strY);
+                }
+
             }
             return path;
 
