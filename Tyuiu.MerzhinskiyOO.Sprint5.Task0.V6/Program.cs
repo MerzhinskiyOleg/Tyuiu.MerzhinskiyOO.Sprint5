@@ -10,7 +10,7 @@ namespace Tyuiu.MerzhinskiyOO.Sprint5.Task0.V6
             DataService ds = new DataService();
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
-            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("***************************************************************************"); 
 
             int x = 3;
             Console.WriteLine("x = " + x);
