@@ -6,11 +6,15 @@ namespace Tyuiu.MerzhinskiyOO.Sprint5.Task1.V17.Lib
     {
         public string SaveToFileTextData(int startValue, int stopValue)
         {
+            // Проверяем, существует ли папка "temp_output" в текущем каталоге (где запускается программа)
             if (!Directory.Exists("temp_output"))
             {
+                // Создаем папку "temp_output" в текущем каталоге
                 Directory.CreateDirectory("temp_output");
             }
+
             string path = "temp_output/OutputFileTask1.txt";
+
             try
             {
                 File.WriteAllText(path, $"start: {startValue}, stop: {stopValue}");
