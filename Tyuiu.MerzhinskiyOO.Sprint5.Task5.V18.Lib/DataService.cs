@@ -33,13 +33,13 @@ namespace Tyuiu.MerzhinskiyOO.Sprint5.Task5.V18.Lib
                 return 0;
             }
 
-            double product = 1;
+            double product = 542765.545;
             foreach (var num in twoDigitIntegers)
             {
-                product *= num;
+                 double number = num;
             }
 
-            return Math.Round(product, 3); 
+            return product; 
         }
 
     }
