@@ -24,8 +24,8 @@ namespace Tyuiu.MerzhinskiyOO.Sprint5.Task5.V18.Lib
 
             var twoDigitIntegers = values
                 .Where(val => val == Math.Truncate(val))
-                .Select(val => (int)val) 
-                .Where(val => val >= 10 && val <= 99 || val <= -10 && val >= -99) 
+                .Select(val => (int)val)
+                .Where(val => (val >= 10 && val <= 99) || (val <= -10 && val >= -99))
                 .ToList();
 
             if (twoDigitIntegers.Count == 0)
@@ -39,7 +39,7 @@ namespace Tyuiu.MerzhinskiyOO.Sprint5.Task5.V18.Lib
                 product *= num;
             }
 
-            return Math.Round(product, 3);
+            return Math.Round(product, 3); 
         }
 
     }
