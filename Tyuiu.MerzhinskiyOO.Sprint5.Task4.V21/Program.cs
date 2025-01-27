@@ -6,7 +6,7 @@ namespace Tyuiu.MerzhinskiyOO.Sprint5.Task4.V21
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Helloo, World!");
         }
     }
 }
